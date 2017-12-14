@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Welcome</title>
+    </h:head>
+    <h:body>
+        <h3>Please enter your name.</h3>
+        <h:form>
+            <p>Name: <h:inputText value="#{manager.name}"/></p>
+            <p><h:commandButton value="Enter" action="welcome"/></p>
+
+
+        </h:form>
+        <h:form>
+            <p>Converted amount: #{manager.convertedAmount}</p>
+            
+            <p>
+                <h:outputLabel for="fromCurrency" value="From currency: "/>
+                <h:inputText id="fromCurrency" value="#{manager.fromCurrency}"/>
+            </p>
+            <p>
+                <h:outputLabel for="toCurrency" value="To currency: "/>
+                <h:inputText id="toCurrency" value="#{manager.toCurrency}"/>
+            </p>
+            <p>
+                <h:outputLabel for="amount" value="Amount: "/>
+                <h:inputText id="amount" value="#{manager.amount}"/>
+            </p>
+            <p>
+                <h:commandButton value="Convert" action="#{manager.convert}"/>
+            </p>
+            
+            
+        </h:form>
+    </h:body>
+</html>
